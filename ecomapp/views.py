@@ -13,7 +13,7 @@ class CreateCategory(GenericAPIView):
     serializer_class = CategorySerializer
 
     def post(self, request):
-        serializer = self.serializer_class(many=True, data=request.data)
+        serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
             serializer.save()
